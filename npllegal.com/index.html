@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NPL Legal — Solicitors | London EC2</title>
+<meta name="description" content="NPL Legal is a London law firm based in the City, providing considered counsel across corporate, commercial and dispute resolution matters." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:        #0d1b2a;   /* deep navy — primary */
+    --ink-soft:   #1d2d44;
+    --ivory:      #f5efe3;   /* warm ivory background */
+    --ivory-soft: #ece3d1;
+    --parchment:  #ebe2ce;
+    --brass:      #a47a3b;   /* antique brass accent */
+    --brass-soft: #c9a76a;
+    --burgundy:   #6b2a2a;
+    --rule:       rgba(13, 27, 42, 0.18);
+    --rule-soft:  rgba(13, 27, 42, 0.08);
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+
+  body{
+    font-family: "DM Sans", "Helvetica Neue", sans-serif;
+    background: var(--ivory);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.55;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.005em;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* subtle paper texture */
+  body::before{
+    content:"";
+    position: fixed; inset:0;
+    pointer-events:none;
+    background-image:
+      radial-gradient(rgba(13,27,42,0.025) 1px, transparent 1px);
+    background-size: 3px 3px;
+    opacity: .55;
+    z-index: 1;
+  }
+
+  .wrap{
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 clamp(24px, 5vw, 80px);
+    position: relative;
+    z-index: 2;
+  }
+
+  /* =========================== */
+  /* NAVIGATION                 */
+  /* =========================== */
+  .top-bar{
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    border-bottom: 1px solid var(--rule-soft);
+    padding: 10px 0;
+  }
+  .top-bar .wrap{ display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+  .top-bar span strong{ color: var(--ink); font-weight:500; letter-spacing:0.18em; margin-left:6px; }
+
+  nav.primary{
+    padding: 28px 0;
+    border-bottom: 1px solid var(--rule);
+    position: sticky; top: 0;
+    background: rgba(245,239,227,0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 50;
+  }
+  nav.primary .wrap{ display:flex; align-items:center; justify-content:space-between; gap:40px; }
+
+  .brand{
+    display:flex; align-items: baseline; gap: 14px;
+    text-decoration:none; color:var(--ink);
+  }
+  .brand .mark{
+    font-family: "Fraunces", serif;
+    font-weight: 500;
+    font-size: 28px;
+    letter-spacing: 0.02em;
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+  .brand .mark span{ color: var(--brass); }
+  .brand .word{
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+    padding-left: 14px;
+    border-left: 1px solid var(--rule);
+  }
+
+  nav.primary ul{
+    list-style:none; display:flex; gap: 36px;
+  }
+  nav.primary a{
+    color: var(--ink);
+    text-decoration:none;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+    position:relative;
+    padding: 4px 0;
+    transition: color .25s ease;
+  }
+  nav.primary a::after{
+    content:""; position:absolute; left:0; bottom:-2px;
+    width:0; height:1px; background: var(--brass);
+    transition: width .35s ease;
+  }
+  nav.primary a:hover{ color: var(--brass); }
+  nav.primary a:hover::after{ width:100%; }
+
+  .cta{
+    background: var(--ink);
+    color: var(--ivory) !important;
+    padding: 12px 22px !important;
+    border: 1px solid var(--ink);
+    transition: all .3s ease;
+  }
+  .cta:hover{
+    background: var(--brass);
+    border-color: var(--brass);
+    color: var(--ink) !important;
+  }
+  .cta::after{ display:none; }
+
+  /* =========================== */
+  /* HERO                       */
+  /* =========================== */
+  .hero{
+    padding: clamp(60px, 10vw, 120px) 0 clamp(80px, 12vw, 160px);
+    position: relative;
+  }
+  .hero .wrap{
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: clamp(40px, 6vw, 100px);
+    align-items: end;
+  }
+
+  .eyebrow{
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--brass);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 40px;
+  }
+  .eyebrow::before{
+    content:""; display:inline-block;
+    width: 36px; height: 1px; background: var(--brass);
+  }
+
+  h1.headline{
+    font-family: "Fraunces", serif;
+    font-weight: 300;
+    font-size: clamp(52px, 9.2vw, 148px);
+    line-height: 0.92;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+  h1.headline em{
+    font-style: italic;
+    font-weight: 400;
+    color: var(--brass);
+    font-variation-settings: "opsz" 144, "SOFT" 60;
+  }
+  h1.headline .amp{
+    font-style: italic;
+    font-weight: 300;
+    color: var(--ink-soft);
+    display: inline-block;
+    transform: translateY(-0.05em);
+  }
+
+  .hero-meta{
+    border-left: 1px solid var(--rule);
+    padding: 8px 0 8px 28px;
+    font-family: "DM Sans", sans-serif;
+  }
+  .hero-meta .label{
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--brass);
+    font-weight: 500;
+    margin-bottom: 14px;
+  }
+  .hero-meta p{
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin-bottom: 22px;
+  }
+  .hero-meta .addr{
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--ink);
+    font-weight: 400;
+  }
+
+  .hero-rule{
+    margin-top: clamp(60px, 9vw, 100px);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 40px;
+    align-items: center;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+  }
+  .hero-rule .est{
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+  }
+  .hero-rule .est strong{ color: var(--brass); font-weight:500; font-style: normal; letter-spacing: 0.18em; font-size:11px; text-transform:uppercase; margin-right: 12px;}
+  .hero-rule .regions{
+    display:flex; gap: 32px;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+    justify-self: center;
+  }
+  .hero-rule .scroll{
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+    display:inline-flex; align-items:center; gap: 10px;
+  }
+  .hero-rule .scroll::after{
+    content:"↓"; font-size: 14px; color: var(--brass);
+  }
+
+  /* =========================== */
+  /* INTRO / ABOUT              */
+  /* =========================== */
+  .intro{
+    padding: clamp(80px, 12vw, 160px) 0;
+    background: var(--ivory-soft);
+    border-top: 1px solid var(--rule-soft);
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .intro .wrap{
+    display: grid;
+    grid-template-columns: 160px 1fr 1fr;
+    gap: clamp(32px, 5vw, 80px);
+  }
+  .section-num{
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 96px;
+    color: var(--brass);
+    line-height: 1;
+    font-variation-settings: "opsz" 144;
+  }
+  .section-num small{
+    display:block;
+    font-family: "DM Sans", sans-serif;
+    font-style: normal;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+    margin-top: 10px;
+  }
+
+  .intro h2{
+    font-family: "Fraunces", serif;
+    font-weight: 300;
+    font-size: clamp(32px, 3.6vw, 52px);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .intro h2 em{ color: var(--brass); font-style: italic; font-weight: 400; }
+
+  .intro .body p{
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+  .intro .body p:first-child::first-letter{
+    font-family: "Fraunces", serif;
+    font-size: 58px;
+    float: left;
+    line-height: 0.9;
+    padding: 6px 12px 0 0;
+    color: var(--brass);
+    font-weight: 400;
+    font-style: italic;
+  }
+  .intro .signature{
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink);
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    max-width: 280px;
+  }
+
+  /* =========================== */
+  /* PRACTICE AREAS              */
+  /* =========================== */
+  .practice{
+    padding: clamp(80px, 12vw, 160px) 0;
+  }
+  .practice-head{
+    display:grid;
+    grid-template-columns: 160px 1fr;
+    gap: clamp(32px, 5vw, 80px);
+    margin-bottom: 80px;
+    align-items: end;
+  }
+  .practice-head h2{
+    font-family: "Fraunces", serif;
+    font-weight: 300;
+    font-size: clamp(40px, 5.6vw, 80px);
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    max-width: 900px;
+  }
+  .practice-head h2 em{ color: var(--brass); font-style: italic; font-weight: 400; }
+
+  .practice-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--rule);
+  }
+  .practice-item{
+    padding: 44px 36px 44px 0;
+    border-bottom: 1px solid var(--rule);
+    border-right: 1px solid var(--rule);
+    position: relative;
+    transition: background .4s ease;
+    cursor: pointer;
+  }
+  .practice-item:nth-child(3n){ border-right:none; padding-right: 0; }
+  .practice-item:nth-child(n){ padding-left: 36px; }
+  .practice-item:nth-child(3n+1){ padding-left: 0; }
+
+  .practice-item:hover{ background: var(--ivory-soft); }
+  .practice-item .pnum{
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    color: var(--brass);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    margin-bottom: 20px;
+    display:block;
+    font-weight: 400;
+  }
+  .practice-item h3{
+    font-family: "Fraunces", serif;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  .practice-item p{
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+  }
+  .practice-item .arrow{
+    position: absolute;
+    top: 44px; right: 24px;
+    width: 22px; height: 22px;
+    display:flex; align-items:center; justify-content:center;
+    color: var(--ink);
+    opacity: 0;
+    transform: translate(-6px, 6px);
+    transition: all .3s ease;
+  }
+  .practice-item:nth-child(3n) .arrow{ right: 0; }
+  .practice-item:hover .arrow{
+    opacity: 1; transform: translate(0, 0); color: var(--brass);
+  }
+
+  /* =========================== */
+  /* APPROACH / PRINCIPLES       */
+  /* =========================== */
+  .approach{
+    background: var(--ink);
+    color: var(--ivory);
+    padding: clamp(80px, 12vw, 160px) 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .approach::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      radial-gradient(rgba(245,239,227,0.04) 1px, transparent 1px);
+    background-size: 3px 3px;
+    pointer-events:none;
+  }
+  .approach .wrap{ position: relative; z-index: 2; }
+
+  .approach-head{
+    display:grid;
+    grid-template-columns: 160px 1fr;
+    gap: clamp(32px, 5vw, 80px);
+    margin-bottom: 80px;
+  }
+  .approach-head .section-num{ color: var(--brass-soft); }
+  .approach-head .section-num small{ color: rgba(245,239,227,0.6); }
+  .approach-head h2{
+    font-family: "Fraunces", serif;
+    font-weight: 300;
+    font-size: clamp(40px, 5.2vw, 72px);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    color: var(--ivory);
+    max-width: 900px;
+  }
+  .approach-head h2 em{ color: var(--brass-soft); font-style: italic; font-weight: 400; }
+
+  .principles{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+  .principle{
+    padding: 44px 36px 0 36px;
+    border-left: 1px solid rgba(245,239,227,0.15);
+  }
+  .principle:first-child{ padding-left: 0; border-left: none; }
+  .principle:last-child{ padding-right: 0; }
+
+  .principle .roman{
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    color: var(--brass-soft);
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    margin-bottom: 24px;
+    display:block;
+  }
+  .principle h3{
+    font-family: "Fraunces", serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    color: var(--ivory);
+    margin-bottom: 18px;
+  }
+  .principle p{
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: rgba(245,239,227,0.72);
+  }
+
+  /* =========================== */
+  /* CONTACT / FOOTER            */
+  /* =========================== */
+  .contact{
+    padding: clamp(80px, 12vw, 160px) 0 60px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .contact .wrap{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, 6vw, 100px);
+    align-items: start;
+  }
+  .contact-left .eyebrow{ margin-bottom: 28px; }
+  .contact h2{
+    font-family: "Fraunces", serif;
+    font-weight: 300;
+    font-size: clamp(44px, 6vw, 88px);
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 32px;
+  }
+  .contact h2 em{ color: var(--brass); font-style: italic; font-weight: 400; }
+
+  .contact-left p.lede{
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-size: 20px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 460px;
+    font-weight: 300;
+  }
+
+  .contact-details{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 32px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+  }
+  .detail-block{}
+  .detail-block .dlabel{
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--brass);
+    font-weight: 500;
+    margin-bottom: 14px;
+    display:block;
+  }
+  .detail-block .dvalue{
+    font-family: "Fraunces", serif;
+    font-size: 20px;
+    line-height: 1.4;
+    color: var(--ink);
+    font-weight: 400;
+    letter-spacing: -0.005em;
+  }
+  .detail-block .dvalue a{
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all .25s ease;
+  }
+  .detail-block .dvalue a:hover{
+    color: var(--brass);
+    border-bottom-color: var(--brass);
+  }
+  .detail-block.full{ grid-column: 1 / -1; }
+
+  footer{
+    padding: 40px 0;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+  footer .wrap{
+    display:flex; justify-content: space-between; flex-wrap:wrap; gap: 20px;
+  }
+  footer .left{ display:flex; gap: 28px; flex-wrap:wrap; }
+  footer a{
+    color: var(--ink-soft); text-decoration: none;
+    transition: color .25s ease;
+  }
+  footer a:hover{ color: var(--brass); }
+
+  /* =========================== */
+  /* ANIMATIONS                  */
+  /* =========================== */
+  @keyframes rise{
+    from{ opacity: 0; transform: translateY(24px); }
+    to  { opacity: 1; transform: translateY(0); }
+  }
+  .reveal{
+    animation: rise 1.1s cubic-bezier(.2,.7,.2,1) both;
+  }
+  .delay-1{ animation-delay: .15s; }
+  .delay-2{ animation-delay: .3s; }
+  .delay-3{ animation-delay: .45s; }
+  .delay-4{ animation-delay: .6s; }
+  .delay-5{ animation-delay: .75s; }
+  .delay-6{ animation-delay: .9s; }
+
+  /* =========================== */
+  /* RESPONSIVE                  */
+  /* =========================== */
+  @media (max-width: 960px){
+    nav.primary ul{ display:none; }
+    .hero .wrap{ grid-template-columns: 1fr; }
+    .hero-rule{ grid-template-columns: 1fr; gap: 20px; text-align: left; }
+    .hero-rule .regions{ justify-self: start; }
+    .intro .wrap{ grid-template-columns: 1fr; }
+    .section-num{ font-size: 72px; }
+    .practice-head{ grid-template-columns: 1fr; gap: 32px; }
+    .practice-grid{ grid-template-columns: 1fr; }
+    .practice-item{ padding: 36px 0 !important; border-right: none !important; }
+    .practice-item .arrow{ right: 0 !important; }
+    .approach-head{ grid-template-columns: 1fr; }
+    .principles{ grid-template-columns: 1fr; }
+    .principle{ padding: 36px 0; border-left: none; border-top: 1px solid rgba(245,239,227,0.15); }
+    .principle:first-child{ border-top: none; padding-top: 0; }
+    .contact .wrap{ grid-template-columns: 1fr; }
+    .contact-details{ grid-template-columns: 1fr; }
+    footer .wrap{ flex-direction: column; align-items: flex-start; }
+  }
+  @media (max-width: 520px){
+    .top-bar .wrap span:nth-child(2){ display:none; }
+    .brand .word{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP STRIP -->
+<div class="top-bar">
+  <div class="wrap">
+    <span>Solicitors &amp; Legal Counsel <strong>London EC2</strong></span>
+    <span>Regulated by the Solicitors Regulation Authority</span>
+    <span>Office hours <strong>Mon–Fri · 09:00 – 18:00</strong></span>
+  </div>
+</div>
+
+<!-- PRIMARY NAV -->
+<nav class="primary">
+  <div class="wrap">
+    <a href="#" class="brand">
+      <span class="mark">N<span>P</span>L</span>
+      <span class="word">Legal</span>
+    </a>
+    <ul>
+      <li><a href="#practice">Practice</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#about">The Firm</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="cta">Instruct Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow reveal">A City Law Firm · Est. London</div>
+      <h1 class="headline">
+        <span class="reveal delay-1">Considered</span><br>
+        <span class="reveal delay-2">counsel <span class="amp">&amp;</span></span><br>
+        <span class="reveal delay-3"><em>decisive</em> outcomes.</span>
+      </h1>
+    </div>
+    <aside class="hero-meta reveal delay-4">
+      <div class="label">Our Chambers</div>
+      <p>We are a boutique City practice advising founders, corporates and private clients across commercial, corporate and contentious matters.</p>
+      <div class="addr">
+        14 New Street<br>
+        London EC2M 4TR
+      </div>
+    </aside>
+  </div>
+
+  <div class="wrap">
+    <div class="hero-rule reveal delay-5">
+      <div class="est"><strong>Practising in</strong> the City of London &amp; the Square Mile.</div>
+      <div class="regions">
+        <span>Corporate</span>
+        <span>Commercial</span>
+        <span>Disputes</span>
+        <span>Private Client</span>
+      </div>
+      <a href="#practice" class="scroll">Scroll</a>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro" id="about">
+  <div class="wrap">
+    <div class="section-num">
+      01
+      <small>The Firm</small>
+    </div>
+    <div>
+      <h2>A <em>considered</em> practice, built on relationships that endure.</h2>
+    </div>
+    <div class="body">
+      <p>NPL Legal is a London-based firm of solicitors advising discerning clients on matters of consequence. Our work is characterised by careful analysis, commercial judgement and a quiet confidence earned over years of practice in the City.</p>
+      <p>We are deliberately small. That is by design — it allows the partners to remain personally engaged on every instruction, to move with precision, and to advise with the candour that long-standing client relationships deserve.</p>
+      <div class="signature">— The Partners, NPL Legal</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICE AREAS -->
+<section class="practice" id="practice">
+  <div class="wrap">
+    <div class="practice-head">
+      <div class="section-num">
+        02
+        <small>Practice Areas</small>
+      </div>
+      <h2>What we do, and <em>how we do it.</em></h2>
+    </div>
+
+    <div class="practice-grid">
+      <article class="practice-item">
+        <span class="pnum">i.</span>
+        <h3>Corporate &amp; M&amp;A</h3>
+        <p>Mergers, acquisitions, disposals, joint ventures and shareholder arrangements for UK and international clients.</p>
+        <span class="arrow">→</span>
+      </article>
+      <article class="practice-item">
+        <span class="pnum">ii.</span>
+        <h3>Commercial Contracts</h3>
+        <p>Strategic commercial agreements, distribution, agency and supply arrangements drafted with commercial intent.</p>
+        <span class="arrow">→</span>
+      </article>
+      <article class="practice-item">
+        <span class="pnum">iii.</span>
+        <h3>Dispute Resolution</h3>
+        <p>Commercial litigation, arbitration and mediation before the English courts and major arbitral seats.</p>
+        <span class="arrow">→</span>
+      </article>
+      <article class="practice-item">
+        <span class="pnum">iv.</span>
+        <h3>Real Estate</h3>
+        <p>Acquisitions, disposals, development and landlord &amp; tenant matters across commercial and prime residential.</p>
+        <span class="arrow">→</span>
+      </article>
+      <article class="practice-item">
+        <span class="pnum">v.</span>
+        <h3>Employment</h3>
+        <p>Senior executive contracts, partnership disputes, post-termination restrictions and Tribunal representation.</p>
+        <span class="arrow">→</span>
+      </article>
+      <article class="practice-item">
+        <span class="pnum">vi.</span>
+        <h3>Private Client</h3>
+        <p>Wills, trusts, estate planning and the stewardship of substantive family wealth across generations.</p>
+        <span class="arrow">→</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="approach" id="approach">
+  <div class="wrap">
+    <div class="approach-head">
+      <div class="section-num">
+        03
+        <small>Our Approach</small>
+      </div>
+      <h2>Precision. Discretion. <em>Outcomes.</em></h2>
+    </div>
+
+    <div class="principles">
+      <div class="principle">
+        <span class="roman">i.</span>
+        <h3>Partner-led, always.</h3>
+        <p>Every matter is led by a partner from instruction to conclusion — no layering, no handovers, no diluted judgement.</p>
+      </div>
+      <div class="principle">
+        <span class="roman">ii.</span>
+        <h3>Commercial before contractual.</h3>
+        <p>We read the deal before we read the document. Our advice serves the outcome, not the other way round.</p>
+      </div>
+      <div class="principle">
+        <span class="roman">iii.</span>
+        <h3>Considered counsel.</h3>
+        <p>We say what we believe, clearly and without hedge. Discretion and candour are the hallmarks of our practice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-left">
+      <div class="eyebrow">Instruct the Firm</div>
+      <h2>A <em>conversation</em><br>to begin with.</h2>
+      <p class="lede">Speak with us in confidence. Initial conversations are held without obligation and in the strictest discretion.</p>
+    </div>
+
+    <div class="contact-details">
+      <div class="detail-block full">
+        <span class="dlabel">Our Chambers</span>
+        <div class="dvalue">14 New Street<br>London EC2M 4TR</div>
+      </div>
+      <div class="detail-block">
+        <span class="dlabel">Telephone</span>
+        <div class="dvalue"><a href="tel:+442076928774">+44 (0)20 7692 8774</a></div>
+      </div>
+      <div class="detail-block">
+        <span class="dlabel">Mobile</span>
+        <div class="dvalue"><a href="tel:+447555774750">+44 (0)7555 774 750</a></div>
+      </div>
+      <div class="detail-block full">
+        <span class="dlabel">Online</span>
+        <div class="dvalue"><a href="https://www.npllegal.com">www.npllegal.com</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="left">
+      <span>© NPL Legal · London</span>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Complaints</a>
+      <a href="#">Regulatory</a>
+    </div>
+    <div>Regulated by the SRA</div>
+  </div>
+</footer>
+
+</body>
+</html>
